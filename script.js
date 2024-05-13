@@ -1,5 +1,24 @@
 const date = new Date();
 
+var last_tabindex = 0;
+
+function reveal() {
+  var noti = document.querySelector(".container_2")
+  
+  if (noti.style.visibility == "hidden") {
+    noti.style.visibility = "visible";
+  }
+  else {
+    if (last_tabindex == noti.tabindex){
+      noti.style.visibility = "hidden";
+      console.log(last_tabindex);
+      console.log(noti.tabindex);
+    }
+  }
+
+  last_tabindex = noti.tabindex
+}
+
 const renderCalendar = () => {
   date.setDate(1);
 
@@ -57,9 +76,9 @@ const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div tabindex=${i} class="today">${i}</div>`;
+      days += `<div tabindex=${i} onclick="reveal()" class="today">${i}</div>`;
     } else {
-      days += `<div tabindex=${i}>${i}</div>`;
+      days += `<div tabindex=${i} onclick="reveal()">${i}</div>`;
     }
   }
 

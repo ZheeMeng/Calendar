@@ -134,3 +134,7 @@ html {
   letter-spacing: 0.2rem;
   margin-bottom: 1rem;
 }
+
+.container_2 {
+  visibility: hidden;
+}
