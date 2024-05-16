@@ -1,22 +1,16 @@
 const date = new Date();
 
-var last_tabindex = 0;
+function reveal(id) {
+  var events = document.querySelector(".events")
 
-function reveal() {
-  var noti = document.querySelector(".container_2")
-  
-  if (noti.style.visibility == "hidden") {
-    noti.style.visibility = "visible";
-  }
-  else {
-    if (last_tabindex == noti.tabindex){
-      noti.style.visibility = "hidden";
-      console.log(last_tabindex);
-      console.log(noti.tabindex);
-    }
+  //add dummy data to be displayed (for now)
+  let events_list = "";
+  for (let item=1; item<=3; item++){
+    events_list+=`<div class="event${item}">Event ${item} for ${id}</div>`;
   }
 
-  last_tabindex = noti.tabindex
+  //display event for that day on container_2
+  events.innerHTML = events_list;
 }
 
 const renderCalendar = () => {
@@ -71,15 +65,9 @@ const renderCalendar = () => {
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   }
 
+  //auto add days
   for (let i = 1; i <= lastDay; i++) {
-    if (
-      i === new Date().getDate() &&
-      date.getMonth() === new Date().getMonth()
-    ) {
-      days += `<div tabindex=${i} onclick="reveal()" class="today">${i}</div>`;
-    } else {
-      days += `<div tabindex=${i} onclick="reveal()">${i}</div>`;
-    }
+    days += `<div tabindex=${i} onclick="reveal(id)" id="day${i}">${i}</div>`;
   }
 
   for (let j = 1; j <= nextDays; j++) {

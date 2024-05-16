@@ -135,6 +135,11 @@ html {
   margin-bottom: 1rem;
 }
 
-.container_2 {
-  visibility: hidden;
+.events {
+  height: 90rem;
+  background-color: #222227;
+  padding: 0 2rem;
+  align-items: center;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
 }
