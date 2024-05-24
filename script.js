@@ -6,7 +6,7 @@ function reveal(id) {
   //add dummy data to be displayed (for now)
   let events_list = "";
   for (let item=1; item<=3; item++){
-    events_list+=`<div class="event${item}">Event ${item} for ${id}</div>`;
+    events_list+=`<div class="ind-event">Event ${item} for ${id}</div>`;
   }
 
   //display event for that day on container_2

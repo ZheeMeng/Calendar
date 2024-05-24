@@ -138,8 +138,15 @@ html {
 .events {
   height: 90rem;
   background-color: #222227;
-  padding: 0 2rem;
   align-items: center;
   text-align: center;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.ind-event {
+  padding: 1rem;
+  width: 100%;
+  background-color: gray;
+  border-radius: 0.5rem;
+  border: 0.2rem solid white;
 }
