@@ -1,13 +1,21 @@
 const date = new Date();
 
 function reveal(id) {
+  var container_2 = document.querySelector(".container_2")
   var events = document.querySelector(".events")
+  var cur_date = document.querySelector(".event p")
 
   //add dummy data to be displayed (for now)
   let events_list = "";
   for (let item=1; item<=3; item++){
-    events_list+=`<div class="ind-event">Event ${item} for ${id}</div>`;
+    events_list += `<div class="ind-event">Event ${item} for Day ${id}</div>`;
   }
+
+  //reveal container_2
+  container_2.style.display = 'block';
+
+  //show chosen date on Event
+  cur_date.innerHTML = document.querySelector(".date h1").innerHTML + ` ` + id;
 
   //display event for that day on container_2
   events.innerHTML = events_list;
@@ -57,7 +65,7 @@ const renderCalendar = () => {
 
   document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
-  document.querySelector(".date p").innerHTML = new Date().toDateString();
+  document.querySelector(".date p").innerHTML = `Today: ` + new Date().toDateString();
 
   let days = "";
 
@@ -67,7 +75,7 @@ const renderCalendar = () => {
 
   //auto add days
   for (let i = 1; i <= lastDay; i++) {
-    days += `<div tabindex=${i} onclick="reveal(id)" id="day${i}">${i}</div>`;
+    days += `<div tabindex=${i} onclick="reveal(id)" id="${i}">${i}</div>`;
   }
 
   for (let j = 1; j <= nextDays; j++) {

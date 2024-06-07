@@ -110,10 +110,12 @@ html {
 }
 
 .container_2 {
+  display: none;
   position: absolute;
   right: 0;
   top: 0;
   color: #eee;
+  min-width: 12vw;
 }
 
 .event {
@@ -121,6 +123,7 @@ html {
   background-color: #167e56;
   padding: 0 2rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -134,8 +137,12 @@ html {
   letter-spacing: 0.2rem;
 }
 
+.event p {
+  font-size: 1.6rem;
+}
+
 .events {
-  height: 90rem;
+  height: 100vh;
   background-color: #222227;
   display: flex;
   flex-direction: column;
